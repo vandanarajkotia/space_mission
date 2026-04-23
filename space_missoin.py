@@ -3,10 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load dataset (make sure file is in same folder)
-df = pd.read_csv("mission_launches.csv")
+df = pd.read_csv(r"C:\Users\Bipin Rajkotia\Downloads\mission_launches.csv")
 
 # Convert Date column
-df["Date"] = pd.to_datetime(df["Date"])
+df["Date"] = pd.to_datetime(df["Date"], format='mixed', errors='coerce')
 df["Year"] = df["Date"].dt.year
 df["Month"] = df["Date"].dt.month
 
